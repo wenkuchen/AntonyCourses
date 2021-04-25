@@ -1,0 +1,47 @@
+*{
+    padding: 0ex;
+    margin: 0ex;
+    box-sizing: border-box;
+}
+h1 {
+    color: blue;
+}
+
+.outer {
+    box-sizing: border-box;
+}
+
+.inner {
+    width:200px;
+    height: 200px;
+    margin: 10px;
+    border: solid 3px black;
+}
+
+.box2 {
+    background-image: url(./hexagon.svg);
+    background-repeat:repeat;
+    //border-radius: 50%;
+}
+
+.box1 {
+    background-color: blue;
+    border-radius: 50%; 
+    // this is a comment.
+}
+
+.box3 {
+    //overflow:scroll;
+    overflow: hidden;
+    width:400px;
+    height: 400px;
+    font-size: 2rem; color: red;
+    text-align: center; 
+}
+
+.box4 {
+    width: 600px; height: 800px;
+    border-radius: 5%;
+    background-image: url(https://source.unsplash.com/120x120);
+    background-size  : cover;
+}

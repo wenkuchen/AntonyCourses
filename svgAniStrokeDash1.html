@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set stroke-dash array & offset in % </title>
+</head>
+<body bgcolor="black">
+    <svg viewBox="-5 -5 100 100" fill="none">
+        <!--background path-->
+        <path d="m0,10 q10,20 20,0 t20,0"
+             fill="" stroke="#ccc" stroke-width="1" />
+        <!--foreground path-->
+        <path id="path" d="m0,10 q10,20 20,0 t20,0 z"
+                  fill="" stroke="limeGreen" stroke-width="3" />
+    </svg>
+
+    <script>
+        function SVGRoad(elem){
+            this.pathLength = elem.getTotalLength();
+            this.setStrokeDashArrayInPercent =
+              function(strokeDashArray) {
+                elem.style.strokeDasharray = 
+                  (strokeDashArray/100)*this.pathLength;
+                  //console.log(strokeDashArray);
+                  //console.log(this.pathLength);
+
+              }
+        }
+        let pathElem = 
+          document.getElementById("path");
+        let SVGRoadInstance = new SVGRoad(pathElem);
+        console.log(SVGRoadInstance.pathLength);
+        SVGRoadInstance.setStrokeDashArrayInPercent(4);
+
+    </script>
+</body>
+</html> 

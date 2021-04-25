@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Making grid as coord. of svg></title>
+</head>
+<body bgcolor="#222">
+  <!--https://www.youtube.com/watch?v=2IY-xTCFjiM easy svg tutorial-->
+    <svg viewBox="0 0 100 100" fill="none">
+
+              <!--define the radial gradient -->
+              <defs>
+                <linearGradient id="frame" >
+                  <stop offset="0%" stop-color="red"></stop>
+                  <stop offset="25%" stop-color="#888"></stop>
+                  <stop offset="65%" stop-color="blue"></stop>
+                  <stop offset="100%" stop-color="#888"></stop>
+                </linearGradient>
+              </defs>
+
+        <!--surrounding path-->
+        <path d="M0,0 h100 v100 h-100 z" stroke="#888" stroke-width="1" />
+        
+        <!---->
+          <path d="M0,0 h100 v100 h-100 z" stroke="url(#frame)" stroke-width="1" />
+        
+
+        <path d="M0,10 h100" stroke="limeGreen" stroke-width=".5" />
+        <path d="M0,20 h100" stroke="limeGreen" stroke-width=".5" />
+        <path d="M0,30 h100" stroke="limeGreen" stroke-width=".5" />
+        <path d="M0,40 h100" stroke="limeGreen" stroke-width=".5" />
+        <path d="M0,50 h100" stroke="limeGreen" stroke-width=".5" />
+        <path d="M0,60 h100" stroke="limeGreen" stroke-width=".5" />
+        <path d="M0,70 h100" stroke="limeGreen" stroke-width=".5" />
+        <path d="M0,80 h100" stroke="limeGreen" stroke-width=".5" />
+        <path d="M0,90 h100" stroke="limeGreen" stroke-width=".5" />
+
+
+        <path d="m10 0 v100" stroke="limeGreen" stroke-width=".5" />
+        <path d="m20 0 v100" stroke="limeGreen" stroke-width=".5" />
+        <path d="m30 0 v100" stroke="limeGreen" stroke-width=".5" />
+        <path d="m40 0 v100" stroke="limeGreen" stroke-width=".5" />
+        <path d="m50 0 v100" stroke="limeGreen" stroke-width=".5" />
+        <path d="m60 0 v100" stroke="limeGreen" stroke-width=".5" />
+        <path d="m70 0 v100" stroke="limeGreen" stroke-width=".5" />
+        <path d="m80 0 v100" stroke="limeGreen" stroke-width=".5" />
+        <path d="m90 0 v100" stroke="limeGreen" stroke-width=".5" />
+
+        <!-- 
+          lower case to indicate relative coordinate in SVG commands
+        -->
+        <path d="m10 20 q10 -20 20 0 t20 0" stroke="pink" stroke-width=".5" />
+
+        <!-- 
+          upper case to indicate relative coordinate in SVG commands
+          stroke-dasharray to create dot dash line by repeated on off % as in array
+        -->
+        <path d="M10 20 Q20 0 30 20 T50 20" stroke="red" stroke-width="1" 
+        stroke-dasharray= "12% 12% 1% 1%" />
+
+        <!--
+          lower case command can move whole svg item relatively 
+        
+        <path d="m0 40 m10 20 q10 -20 20 0 t20 0" stroke="pink" stroke-width=".5" />
+-->
+        
+<!--
+  <path stroke="red" stroke-width=".5" d="m20 20 10 10 -10 10 -10 -10 z" />
+-->
+    </svg>
+
+<!-- -->
+    <script type="text/javascript">
+      var svg = document.getElementsByTagName('svg')[0];
+      var elem = document.createElementNS('http://www.w3.org/2000/svg','line');
+      elem.setAttributeNS(null,'id', 'dLine');
+      elem.setAttributeNS(null,'x1', 0);
+      elem.setAttributeNS(null,'y1', 0);
+      elem.setAttributeNS(null,'x2', 100);
+      elem.setAttributeNS(null,'y2', 100);
+      elem.setAttributeNS(null,'stroke', "url(#frame");
+      elem.setAttributeNS(null,'stroke-width', .75);
+      svg.appendChild(elem);
+    </script>
+ 
+</body>
+</html> 

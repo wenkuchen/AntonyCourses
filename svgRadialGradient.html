@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Making grid as coord. of svg></title>
+</head>
+<body bgcolor="#222">
+  <!--https://www.oxxostudio.tw/articles/201409/svg-25-gradients-patterns.html 
+    SVG 研究之路 (25) - 再談漸層填色-->
+    <svg viewBox="0,0,100,100" fill="none">
+        <!--define the radial gradient -->
+        <defs>
+          <radialGradient id="globe" cx=".25" cy=".25" r=".65">
+            <stop offset="0%" stop-color="#fff"></stop>
+            <stop offset=".2" stop-color="#9f9"></stop>
+            <stop offset=".55" stop-color="#373"></stop>
+            <stop offset="100%" stop-color="#000"></stop>
+          </radialGradient>
+        </defs>
+        <circle cx="50%" cy="50%" r="30" fill="url(#globe)"/>
+
+    </svg>
+</body>
+</html> 

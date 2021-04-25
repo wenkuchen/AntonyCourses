@@ -1,0 +1,63 @@
+
+svg {
+    margin: 20px;
+    border: solid white 1px;
+}
+    
+#path {
+    fill: none;
+    stroke:limeGreen;
+    stroke-width: 3px;
+    stroke-dasharray: 0% 100%;
+    /*initial 0% dash 100% empty*/
+    animation: dash2 2s linear forwards;
+    /* animation: dash3 2s linear forwards; */
+}
+
+@keyframes dash {
+    100% {
+        stroke-dasharray: 100 0;
+        /* go by 100px 0px */
+    }
+}
+
+@keyframes dash2 {
+    to {
+        stroke-dasharray: 100% 0%;
+    }
+}
+
+@keyframes dash3 {
+    25% {
+        stroke-dasharray: 20 80;
+    }
+    50% {
+        stroke-dasharray: 100 0;
+    }
+    75% {
+        stroke-dasharray: 0 100;
+    }
+    100% {
+        stroke-dasharray: 100 0;
+    }
+}
+
+.animCircle {
+    fill: powderblue;
+    stroke:red;
+    stroke-width: 0px;
+    animation: thickerStroke 2s 2s linear forwards infinite;
+    /* delay 2s, duration 2s */
+}
+
+@keyframes thickerStroke {
+    0% {
+        stroke-width: 0px;
+    }
+    50% {
+        stroke-width: 5px;
+    }
+    100% {
+        stroke-width: 0px;
+    }
+}
