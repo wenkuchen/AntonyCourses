@@ -30,6 +30,7 @@
         #lowerFace {
             stroke-dasharray: 0 100%; 
             transition: all 2s;
+            stroke: blue;
         }
 
         .div1 { 
@@ -69,19 +70,24 @@
 
     <script type="text/javascript">
         let elem = document.getElementById('biggerBtn');
+
         console.log(elem);
-        elem.addEventListener('click', ()=> {
+
+        function makeBigger() {  
             console.log('button clicked');
-            document.getElementsByClassName('eyeball')[0].setAttributeNS(null,'r',"15");
+            document.getElementsByClassName('eyeball')[0].style.r="15";     
             
-            document.getElementsByClassName('eyeball')[1].setAttributeNS(null,'r',"15");
+            document.getElementsByClassName('eyeball')[1].style.r="15";
 
             // not working by setAtrribueNS 
             //document.getElementById('lowerFace').setAttributeNS(null,'stroke-dasharray',"100% 0");
             let el = document.getElementById('lowerFace');
             el.style.strokeDasharray = "100% 0";
+            el.style.stroke="blue";
             console.log(el);
-        });
+        }
+
+        elem.addEventListener('click', makeBigger);
         console.log('here is it');
     </script>
 </body>
