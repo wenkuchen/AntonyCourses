@@ -24,11 +24,11 @@
             stroke: red;
             stroke-width: 2;
             fill: #333;
-            transition: all 2s;
+            transition: all .5s;
         }
 
         #lowerFace {
-            transition: all 2s;
+            transition: all .5s;
         }
 
         .div1 { 
@@ -43,6 +43,11 @@
 
     <svg viewbox="0 0 200 200"> 
 
+        <circle>
+            <animate>
+                
+            </animate>
+        </circle>
         <!--Leye-->
         <g class="eye">
             <circle class="eyeball" cx="50" cy="50" r="10"/>  
@@ -57,18 +62,23 @@
             <line x1="120" y1="40" x2="180" y2="40" /> 
         </g>
        
-        <path id="lowerFace" d="M100 40 L80 100 L110 100 M 50 140 Q 100 110 150 140" fill=none style="stroke-width:5"/>>
+        <path id="lowerFace" 
+        d="M100 40 L80 100 L110 100 M 50 140 Q 100 110 150 140" 
+        fill=none style="stroke-width:5"/>>
         <!-- <path id="mouth" d="" fill=none style="stroke-width:3" /> -->
     </svg>
 
     <div class="div1">
         <h1>Button Event</h1>
-        <button id="smileBtn" style="font-size: 6rem;">Change Face</button>
+        <button id="changeBtn" style="font-size: 6rem;">Change Face</button>
     </div>
 
     <script type="text/javascript">
-        let elem = document.getElementById('smileBtn');
+        let elem = document.getElementById('changeBtn');
+        
         let prevFace = "angry";  // initial face
+
+        elem.addEventListener('click', chgFace);
 
         console.log(elem);
 
@@ -76,33 +86,34 @@
             console.log('button clicked');
 
             // make the eyeball larger r = 10 --> r = 15
-            document.getElementsByClassName('eyeball')[0].style.r="15";     
-            document.getElementsByClassName('eyeball')[1].style.r="15";
+            //document.getElementsByClassName('eyeball')[0].style.r="15";     
+            //document.getElementsByClassName('eyeball')[1].style.r="15";
 
-            let el = document.getElementById('lowerFace');
-            
-            
+            let lowerFace = document.getElementById('lowerFace');
+    
             console.log(prevFace);
 
             // change the Q 100 110 <--> Q 100 180 to change the curve
             if (prevFace === "angry") {
-                el.setAttributeNS(null, 
+
+                lowerFace.setAttributeNS(null, 
                 'd', 
                 "M100 40 L80 100 L110 100 M 50 140 Q 100 180 150 140" );
+                //document.getElementsByClassName('eyeball')[1].style.stroke="black";
                 prevFace = "smile";
             } else {
-                el.setAttributeNS(null, 
+                lowerFace.setAttributeNS(null, 
                 'd', 
                 "M100 40 L80 100 L110 100 M 50 140 Q 100 110 150 140" );
+                //document.getElementsByClassName('eyeball')[1].style.stroke="red";
                 prevFace = "angry";
             }
             
             // el.style.d = .....  NOT Working
             //el.style.d = "M100 40 L80 100 L110 100 M 50 140 Q 100 190 150 140";
-            console.log(el);
+            console.log(lowerFace);
         }
 
-        elem.addEventListener('click', chgFace);
         console.log('here is it');
     </script>
 </body>
