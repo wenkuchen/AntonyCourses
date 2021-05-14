@@ -2,3 +2,10 @@ https://css-tricks.com/child-and-sibling-selectors/
 Child and Sibling Selectors 
 difference between children and descendants
 
+Amit Sheen on Sep 9, 2020 (Updated on Sep 10, 2020)
+How CSS Perspective Works
+https://css-tricks.com/how-css-perspective-works/
+
+https://stackoverflow.com/questions/56701484/how-to-create-svg-gradient-with-3-points-set-out-in-a-triangle-that-blend-togeth
+I want to create a svg gradient in a circle that has 3 points of color, set out in a triangle like this.
+
